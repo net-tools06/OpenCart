@@ -19,7 +19,7 @@ class ConnectedClientsTab:
     def list_connected_clients(self):
         cursor = self.db.cursor()
 
-        query = "SELECT user_id, ip FROM oc_session WHERE session_id IS NOT NULL"
+        query = "SELECT session_id, data FROM `oc_session` WHERE data LIKE '%customer_id%' AND data NOT LIKE '%\"customer_id\";s:1:\"0\"%';"
         cursor.execute(query)
         connected_clients = cursor.fetchall()
 
