@@ -30,3 +30,5 @@ class OpenCartApp:
 
     def run(self):
         self.root.mainloop()
+        self.ongoing_transactions_tab = OngoingTransactionsTab(self.notebook, self.db)
+        self.list_catalogues_tab = CatalogsTab(self.notebook, self.db)
